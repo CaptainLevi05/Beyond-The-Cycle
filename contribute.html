@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why we’re asking: Beyond The Cycle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f3eedf;
+    --card: #faf7ec;
+    --ink: #26261f;
+    --muted: #6b6a5c;
+    --moss: #4a5d3a;
+    --amber: #c98a1b;
+    --rust: #a4452a;
+    --line: #d9d2bc;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
+
+  header { padding-bottom: 20px; border-bottom: 2px solid var(--moss); margin-bottom: 26px; }
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--moss);
+    border: 1px solid var(--moss);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  h1 { font-weight: 600; font-size: 31px; line-height: 1.15; margin: 0 0 12px; letter-spacing: -0.01em; }
+  header p { margin: 0 0 12px; }
+  header p:last-child { margin-bottom: 0; }
+  .lead { font-size: 18.5px; }
+
+  h2 { font-size: 22px; line-height: 1.25; margin: 0 0 8px; }
+  section {
+    border-left: 4px solid var(--moss);
+    background: var(--card);
+    padding: 16px 18px 6px;
+    margin-bottom: 22px;
+  }
+  section.failure { border-left-color: var(--rust); }
+  section.open { border-left-color: var(--amber); }
+  section p { margin: 0 0 12px; }
+
+  .acts { list-style: none; margin: 0 0 12px; padding: 0; }
+  .acts li { padding: 9px 0; border-top: 1px solid var(--line); }
+  .acts li:first-child { border-top: 0; padding-top: 2px; }
+  .acts b { font-family: var(--mono); font-weight: 500; font-size: 14.5px; display: block; }
+  .acts span { color: var(--muted); font-size: 15.5px; }
+
+  ul.plain { margin: 0 0 12px; padding-left: 20px; }
+  ul.plain li { margin-bottom: 6px; }
+
+  .go {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 19px;
+    background: var(--moss);
+    color: #fff;
+    border-radius: 3px;
+    padding: 16px 18px;
+    margin: 6px 0 12px;
+  }
+  .go:hover { background: #3d4d30; }
+  .go:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+  .small { font-size: 14.5px; color: var(--muted); text-align: center; margin: 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="tag">Beyond The Cycle</span>
+    <h1>Why we’re asking for five minutes of your time</h1>
+    <p class="lead">An iGEM season teaches a team an enormous amount, and most of it never leaves the team. The wiki shows what worked. It rarely shows what didn’t, what was ruled out, or what you wished you’d had time to try.</p>
+    <p>Beyond The Cycle is a library that collects exactly that from past teams, so teams starting the 2027 season can brainstorm from what’s already been learned instead of from a blank page.</p>
+  </header>
+
+  <section>
+    <h2>What this is, and what it isn’t</h2>
+    <p>It’s a brainstorming resource for new teams: a place to find an idea, see how far others got, and spot directions nobody has finished.</p>
+    <p>It isn’t a project handover, a ranking, or a judgement of anyone’s work. Nobody is being scored.</p>
+  </section>
+
+  <section>
+    <h2>What we’ll ask you</h2>
+    <p>Every library entry follows the same four parts, and the form mirrors them:</p>
+    <ul class="acts">
+      <li><b>Problem &amp; idea</b><span>What you set out to solve and how.</span></li>
+      <li><b>Scientific findings</b><span>The one or two results that mattered most.</span></li>
+      <li><b>Failure archive</b><span>What didn’t work, and why.</span></li>
+      <li><b>Open questions &amp; pivot seeds</b><span>What you’d try with another season.</span></li>
+    </ul>
+    <p>Only team name, year and a short problem and idea are required, plus at least one of findings, failures or open questions. Skip anything you’d rather not share.</p>
+  </section>
+
+  <section class="failure">
+    <h2>Why failures matter most</h2>
+    <p>A failed approach costs a team weeks, and it usually stays buried because nobody writes it down. If you tell the next team what failed, what you think caused it, and roughly how long it cost you, you save them that time and point them toward better questions. Specific beats polite.</p>
+  </section>
+
+  <section class="open">
+    <h2>Good to know</h2>
+    <ul class="plain">
+      <li>It takes about five minutes and works on a phone.</li>
+      <li>Entries are reviewed before they go into the library, and appear under your team name and year.</li>
+      <li>Contact details are optional, used only if you’re happy to be asked a follow-up question, and never published.</li>
+      <li>What you share is used only for the Beyond The Cycle library.</li>
+    </ul>
+  </section>
+
+  <a class="go" href="submit.html">Start the form</a>
+  <p class="small">Already filled it in? Thank you, you’re done.</p>
+</div>
+</body>
+</html>
