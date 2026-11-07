@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Add your team to Beyond The Cycle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f3eedf;
+    --card: #faf7ec;
+    --ink: #26261f;
+    --muted: #6b6a5c;
+    --moss: #4a5d3a;
+    --amber: #c98a1b;
+    --rust: #a4452a;
+    --line: #d9d2bc;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 28px 18px 64px; }
+
+  header { padding-bottom: 20px; border-bottom: 2px solid var(--moss); margin-bottom: 26px; }
+  .tag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--moss);
+    border: 1px solid var(--moss);
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 14px;
+  }
+  h1 { font-weight: 600; font-size: 31px; line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.01em; }
+  header p { margin: 0; color: var(--muted); }
+
+  fieldset {
+    border: 0;
+    border-left: 4px solid var(--moss);
+    background: var(--card);
+    margin: 0 0 22px;
+    padding: 16px 16px 6px 18px;
+  }
+  fieldset.failure { border-left-color: var(--rust); }
+  fieldset.open { border-left-color: var(--amber); }
+  legend {
+    float: left; width: 100%;
+    padding: 0; margin: 0 0 4px;
+    font-weight: 600; font-size: 21px;
+  }
+  legend + * { clear: both; }
+  .why { font-size: 15px; color: var(--muted); margin: 0 0 14px; }
+
+  .field { margin-bottom: 16px; }
+  label, .lbl {
+    display: block;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .hint { display: block; font-family: var(--serif); font-weight: 400; font-size: 14.5px; color: var(--muted); margin-top: 1px; }
+  .req { color: var(--rust); }
+
+  input[type=text], input[type=url], input[type=number], textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 16px; /* stops iOS zooming on focus */
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 10px 11px;
+  }
+  textarea { min-height: 104px; resize: vertical; }
+  fieldset.failure textarea { min-height: 150px; }
+  input:focus-visible, textarea:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 1px;
+  }
+  .row { display: grid; grid-template-columns: 1fr; gap: 0 14px; }
+  @media (min-width: 520px) { .row { grid-template-columns: 1fr 1fr; } }
+
+  .check { display: flex; gap: 10px; align-items: flex-start; font-family: var(--serif); font-size: 16px; font-weight: 400; margin-bottom: 12px; }
+  .check input { width: 22px; height: 22px; margin-top: 3px; accent-color: var(--moss); flex: none; }
+  #contactBox { display: none; }
+  #contactBox.on { display: block; }
+
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  button {
+    font: inherit; font-weight: 600; font-size: 18px;
+    width: 100%;
+    background: var(--moss); color: #fff;
+    border: 0; border-radius: 3px;
+    padding: 15px 18px;
+    cursor: pointer;
+  }
+  button:hover { background: #3d4d30; }
+  button:disabled { background: var(--muted); cursor: wait; }
+
+  #msg { margin-top: 14px; padding: 12px 14px; border-left: 4px solid var(--rust); background: #f6e4dc; font-size: 15.5px; display: none; }
+  #msg.on { display: block; }
+
+  #done { display: none; background: var(--card); border-left: 4px solid var(--moss); padding: 22px 20px; }
+  #done.on { display: block; }
+  #done h2 { margin: 0 0 8px; font-size: 25px; }
+  #done p { margin: 0 0 14px; }
+  #done button { background: transparent; color: var(--moss); border: 1px solid var(--moss); font-size: 16px; padding: 11px 16px; width: auto; }
+  #done button:hover { background: #e7ead9; }
+
+  .foot { margin-top: 22px; font-size: 14.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="tag">Beyond The Cycle</span>
+    <h1>Tell the next iGEM teams what you learned</h1>
+    <p>Takes about five minutes. Your answers go into a library that 2027 teams use to brainstorm: what worked, what didn’t, and what’s still open. Skip anything you’d rather not share.</p>
+  </header>
+
+  <form id="f" novalidate>
+    <div class="hp" aria-hidden="true">
+      <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <fieldset>
+      <legend>Problem &amp; idea</legend>
+      <div class="row">
+        <div class="field">
+          <label for="team_name">Team name <span class="req">*</span></label>
+          <input type="text" id="team_name" name="team_name" maxlength="120" required autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="year">Year <span class="req">*</span></label>
+          <input type="number" id="year" name="year" value="2026" min="2004" max="2035" inputmode="numeric" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="track">Track</label>
+          <input type="text" id="track" name="track" maxlength="120" list="tracks" placeholder="e.g. Diagnostics">
+          <datalist id="tracks">
+            <option>Diagnostics</option><option>Environment</option><option>Food &amp; Nutrition</option>
+            <option>Foundational Advance</option><option>Health &amp; Medicine</option><option>Manufacturing</option>
+            <option>Therapeutics</option><option>Software &amp; Measurement</option><option>Agriculture</option><option>Energy</option>
+          </datalist>
+        </div>
+        <div class="field">
+          <label for="chassis">Chassis</label>
+          <input type="text" id="chassis" name="chassis" maxlength="120" list="chassis_list" placeholder="e.g. E. coli">
+          <datalist id="chassis_list">
+            <option>E. coli</option><option>B. subtilis</option><option>S. cerevisiae</option>
+            <option>Cell-free</option><option>Lactobacillus</option><option>Pseudomonas</option><option>Mammalian cells</option>
+          </datalist>
+        </div>
+      </div>
+      <div class="field">
+        <label for="problem_idea">The problem and your idea, in a few lines <span class="req">*</span></label>
+        <textarea id="problem_idea" name="problem_idea" maxlength="1500" required></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Scientific findings</legend>
+      <p class="why">The one or two results that mattered most.</p>
+      <div class="field">
+        <label for="findings">What did you find?
+          <span class="hint">Numbers and conditions help: what you measured, in what system, and what you saw.</span>
+        </label>
+        <textarea id="findings" name="findings" maxlength="3000"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="failure">
+      <legend>Failure archive</legend>
+      <p class="why">This is the part future teams value most. Honest and specific beats polite.</p>
+      <div class="field">
+        <label for="failures">What didn’t work?
+          <span class="hint">What failed, why you think it failed, what you ruled out, and roughly how much time it cost you.</span>
+        </label>
+        <textarea id="failures" name="failures" maxlength="3000"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset class="open">
+      <legend>Open questions &amp; pivot seeds</legend>
+      <p class="why">Directions you didn’t have time for.</p>
+      <div class="field">
+        <label for="open_questions">If you had another season, what would you try?
+          <span class="hint">Unanswered questions, ideas you dropped, or a different angle on the same problem.</span>
+        </label>
+        <textarea id="open_questions" name="open_questions" maxlength="3000"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Follow-up</legend>
+      <div class="field">
+        <label for="wiki_url">Link to your team wiki</label>
+        <input type="url" id="wiki_url" name="wiki_url" maxlength="300" inputmode="url" placeholder="https://">
+      </div>
+      <label class="check" for="contact_ok">
+        <input type="checkbox" id="contact_ok" name="contact_ok">
+        <span>I’m happy to do a short follow-up chat to add more detail</span>
+      </label>
+      <div class="field" id="contactBox">
+        <label for="contact">Email or WhatsApp number</label>
+        <input type="text" id="contact" name="contact" maxlength="200" autocomplete="email">
+      </div>
+    </fieldset>
+
+    <p class="why" style="margin-bottom:14px">Fill in at least one of findings, failures or open questions, then send.</p>
+    <button type="submit" id="send">Send to the library</button>
+    <div id="msg" role="alert"></div>
+  </form>
+
+  <div id="done" role="status">
+    <h2>Received, thank you</h2>
+    <p>Your entry is in. It will be reviewed before it appears in the library.</p>
+    <button type="button" id="again">Add another team</button>
+  </div>
+
+  <p class="foot">Entries are used only for the Beyond The Cycle library. Your contact details, if you give them, are for follow-up and won’t be published.</p>
+</div>
+
+<script>
+  // 1. Paste your two values from Supabase: Project Settings -> API
+  const SUPABASE_URL = "https://yyrdiaaphkwontegubhu.supabase.co/rest/v1/";        // like https://abcd1234.supabase.co
+  const SUPABASE_KEY = "sb_publishable_1Ysg0WXE5Bvx-7l4j1tfFw__hCK-EnY";         // the anon key or publishable key (never the secret / service_role key)
+
+  const form = document.getElementById("f");
+  const msg = document.getElementById("msg");
+  const send = document.getElementById("send");
+  const done = document.getElementById("done");
+  const contactBox = document.getElementById("contactBox");
+
+  document.getElementById("contact_ok").addEventListener("change", e => {
+    contactBox.classList.toggle("on", e.target.checked);
+  });
+
+  document.getElementById("again").addEventListener("click", () => {
+    form.reset();
+    contactBox.classList.remove("on");
+    done.classList.remove("on");
+    form.style.display = "";
+    window.scrollTo(0, 0);
+  });
+
+  function showError(text) { msg.textContent = text; msg.classList.add("on"); msg.scrollIntoView({ block: "center" }); }
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    msg.classList.remove("on");
+
+    const d = Object.fromEntries(new FormData(form));
+    if (d.website) { return; } // honeypot: bots fill this, people can't see it
+
+    const clean = v => (v || "").trim();
+    const team = clean(d.team_name), idea = clean(d.problem_idea);
+    const findings = clean(d.findings), failures = clean(d.failures), open = clean(d.open_questions);
+
+    if (!team) return showError("Add your team name.");
+    if (!d.year) return showError("Add the year your team competed.");
+    if (!idea) return showError("Add a line or two on the problem and your idea.");
+    if (!findings && !failures && !open) return showError("Fill in at least one of findings, failures or open questions.");
+
+    const wiki = clean(d.wiki_url);
+    if (wiki && !/^https?:\/\//i.test(wiki)) return showError("The wiki link should start with https://");
+
+    if (SUPABASE_URL.startsWith("PASTE_") || SUPABASE_KEY.startsWith("PASTE_")) {
+      return showError("This form isn’t connected yet: add the Supabase URL and key at the top of the script.");
+    }
+
+    const row = {
+      team_name: team,
+      year: parseInt(d.year, 10),
+      track: clean(d.track) || null,
+      chassis: clean(d.chassis) || null,
+      problem_idea: idea,
+      findings: findings || null,
+      failures: failures || null,
+      open_questions: open || null,
+      wiki_url: wiki || null,
+      contact_ok: !!d.contact_ok,
+      contact: d.contact_ok ? (clean(d.contact) || null) : null
+    };
+
+    const headers = {
+      "Content-Type": "application/json",
+      "apikey": SUPABASE_KEY,
+      "Prefer": "return=minimal"
+    };
+    if (SUPABASE_KEY.startsWith("eyJ")) headers["Authorization"] = "Bearer " + SUPABASE_KEY; // legacy anon keys only
+
+    send.disabled = true;
+    send.textContent = "Sending…";
+    try {
+      const res = await fetch(SUPABASE_URL + "/rest/v1/submissions", {
+        method: "POST", headers, body: JSON.stringify(row)
+      });
+      if (!res.ok) throw new Error("status " + res.status);
+      form.style.display = "none";
+      done.classList.add("on");
+      window.scrollTo(0, 0);
+    } catch (err) {
+      showError("That didn’t send. Check your connection and try again. Your answers are still on the page.");
+    } finally {
+      send.disabled = false;
+      send.textContent = "Send to the library";
+    }
+  });
+</script>
+</body>
+</html>
