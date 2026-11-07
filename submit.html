@@ -313,12 +313,12 @@
       const res = await fetch(SUPABASE_URL + "/rest/v1/submissions", {
         method: "POST", headers, body: JSON.stringify(row)
       });
-      if (!res.ok) throw new Error("status " + res.status);
+      if (!res.ok) throw new Error("status " + res.status + ": " + (await res.text()));
       form.style.display = "none";
       done.classList.add("on");
       window.scrollTo(0, 0);
     } catch (err) {
-      showError("That didn’t send. Check your connection and try again. Your answers are still on the page.");
+      showError("That didn’t send (" + err.message + "). Your answers are still on the page.");
     } finally {
       send.disabled = false;
       send.textContent = "Send to the library";
